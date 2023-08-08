@@ -36,22 +36,22 @@ export function Footer() {
     return (
       <React.Fragment>
         <footer className='bg-[#F3F3F3]'>
-            <div className='flex'>
-                <div className='flex-1'>
+            <div className='flex container-lg mx-auto px-24 py-16'>
+                <div className='flex-1 flex'>
                   {footer_menu.map((obj, key) =>
-                    <div key={key}>
-                      <h1>{obj.name}</h1>
+                    <div className='mr-[64px]' key={key}>
+                      <h1 className='text-[28px] text-[#333] leading-normal font-bold mb-[16px]'>{obj.name}</h1>
                       <ul>
                         {obj.items.map((item, key) => 
-                          <li key={key}><Link href={item.url}>{item.label}</Link></li>
+                          <li key={key}><Link className='text-[#656565] text-[18px] leading-normal font-semibold' href={item.url}>{item.label}</Link></li>
                         )}
                       </ul>
                     </div>
                   )}
                 </div>
                 <div>
-                  <Image src={image} width={100} height={60} alt='Logo Horta Club' />
-                  <span>{copyright}</span>
+                  <Image className='mb-[16px]' src={image} width={172} height={60} alt='Logo Horta Club' />
+                  <span className='text-[#656565] text-[18px] leading-normal font-semibold'>{copyright}</span>
                 </div>
             </div>
         </footer>
