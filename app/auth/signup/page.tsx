@@ -37,6 +37,35 @@ export default function Signup() {
         // Faça algo com os dados do formulário, como enviar para uma API
     };
 
+    const box = [
+        {
+            image: "/step3.png",
+            title: "Mini",
+            description: "pelo menos 6 itens",
+            price: "R$ 60",
+            _id: "1"
+        },{
+            image: "/step3.png",
+            title: "Padrão",
+            description: "pelo menos 14 itens",
+            price: "R$ 70",
+            _id: "2"
+        }
+    ];
+
+    const delivery = [
+        {
+            label: "Toda semana",
+            _id: "1"
+        },{
+            label: "15 em 15 dias",
+            _id: "2"
+        },{
+            label: "1 vez no mês",
+            _id: "3"
+        }
+    ]
+
     const logo = "/logo.png";
 
     return (
@@ -57,7 +86,7 @@ export default function Signup() {
                                 style={{
                                     fontFamily: "New Spirit"
                             }}>{steps[currentStep].label}</h1>
-                            <StepComponent setForm={setFormData} formData={formData} />
+                            <StepComponent setForm={setFormData} formData={formData} box={box} delivery={delivery}  />
                         </div>
                         <div>
                             <span className='text-[#949494] text-[12px] font-normal leading-normal text-right w-full block py-[12px] px-[4px]'>{currentStep + 1}/{steps.length}</span>
