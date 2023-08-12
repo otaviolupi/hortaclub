@@ -16,9 +16,9 @@ import { VscSend } from "react-icons/vsc";
 const steps = [
   { component: About, label: "Sobre você" },
   { component: Box, label: "Qual sua cesta ideal?" },
-  { component: Products, label: "Quando prefere nos receber?" },
-  { component: When, label: "Quando prefere nos receber?" },
-  { component: Where, label: "Onde devemos entregar?" }
+  { component: Products, label: "O que gostaria de receber em sua cesta?" },
+  { component: When, label: "Quando e onde prefere nos receber?" },
+  { component: Where, label: "Confira se está tudo correto antes do pagamento:" }
 ];
 
 export default function Signup() {
@@ -66,6 +66,20 @@ export default function Signup() {
         }
     ]
 
+    const timesheet = [
+        {
+            _id: "1",
+            icon: "/step2.png",
+            day: "Segunda-feira",
+            hours: "8h às 20h"
+        },{
+            _id: "2",
+            icon: "/step2.png",
+            day: "Terça-feira",
+            hours: "8h às 20h"
+        }
+    ];
+
     const logo = "/logo.png";
 
     return (
@@ -86,7 +100,7 @@ export default function Signup() {
                                 style={{
                                     fontFamily: "New Spirit"
                             }}>{steps[currentStep].label}</h1>
-                            <StepComponent setForm={setFormData} formData={formData} box={box} delivery={delivery}  />
+                            <StepComponent setForm={setFormData} formData={formData} box={box} delivery={delivery} timesheet={timesheet} />
                         </div>
                         <div>
                             <span className='text-[#949494] text-[12px] font-normal leading-normal text-right w-full block py-[12px] px-[4px]'>{currentStep + 1}/{steps.length}</span>

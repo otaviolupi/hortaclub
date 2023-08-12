@@ -15,10 +15,10 @@ export const Box = ({ setForm, formData, box, delivery }) => (
         )
       })}
 
-      <div className="mt-[53px] flex">
+      <div className="mt-[53px] flex justify-center">
         {delivery.map((item, key) => {
           return (
-            <a key={key} className={formData.delivery == item._id ? "rounded-[100px] bg-[#FED143] flex justify-center text-[#3F3F3F] text-[14px] leading-normal py-[7px] px-[13px] mr-[7px] font-semibold cursor-pointer" : "rounded-[100px] bg-[#EAEAEA] flex justify-center text-[#3F3F3F] text-[14px] leading-normal py-[7px] px-[13px] mr-[7px] font-semibold cursor-pointer"} onClick={(e) => setForm({ ...formData, delivery: item._id })}>{item.label}</a>
+            <a key={key} className={formData.delivery == item._id ? "rounded-[100px] bg-[#FED143] flex justify-center text-[#3F3F3F] text-[14px] leading-normal py-[7px] px-[13px] mr-[7px] font-semibold cursor-pointer flex-1 max-w-[30%]" : "rounded-[100px] bg-[#EAEAEA] flex justify-center text-[#3F3F3F] text-[14px] leading-normal py-[7px] px-[13px] mr-[7px] font-semibold cursor-pointer flex-1 max-w-[30%]"} onClick={(e) => setForm({ ...formData, delivery: item._id })}>{item.label}</a>
           )
         })}
       </div>
